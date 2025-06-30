@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Assafbook Dashboard</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .hotel-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        .carousel img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Carousel -->
+    <div id="hotelCarousel" class="carousel slide mb-5" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="./images/ArtStudio.jpg" class="d-block w-100" alt="Hotel 1">
+            </div>
+            <div class="carousel-item">
+                <img src="./images/bg-image-1.jpg" class="d-block w-100" alt="Hotel 2">
+            </div>
+            <div class="carousel-item">
+                <img src="./images/bg-image-2.jpg" class="d-block w-100" alt="Hotel 3">
+            </div>
+            <div class="carousel-item">
+                <img src="./images/bg-image-3.png" class="d-block w-100" alt="Hotel 4">
+            </div>
+            <div class="carousel-item">
+                <img src="./images/bg-image-4.jpg" class="d-block w-100" alt="Hotel 4">
+            </div>
+            <div class="carousel-item">
+                <img src="./images/Drawing&Sculpture.jpg" class="d-block w-100" alt="Hotel 3">
+            </div>
+            <div class="carousel-item">
+                <img src="./images/game_pad.jpg" class="d-block w-100" alt="Hotel 3">
+            </div>
+            <div class="carousel-item">
+                <img src="./images/gym_capsule.jpg" class="d-block w-100" alt="Hotel 3">
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#hotelCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#hotelCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon"></span>
+        </button>
+    </div>
+
+    <!-- Hotel Cards -->
+    <div class="container">
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+            <!-- Hotel 1 -->
+            <div class="col">
+                <div class="card hotel-card">
+                    <img src="./images/bg-image-1.jpg" alt="Capsule 1">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Capsule 1</h5>
+                        <button class="btn btn-primary" onclick="showLocationModal('Capsule 1')">Book Now</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card hotel-card">
+                    <img src="./images/bg-image-2.jpg" alt="Capsule 2">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Capsule 2</h5>
+                        <button class="btn btn-primary" onclick="showLocationModal('Capsule 2')">Book Now</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card hotel-card">
+                    <img src="./images/bg-image-3.png" alt="Capsule 3">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Capsule 3</h5>
+                        <button class="btn btn-primary" onclick="showLocationModal('Capsule 3')">Book Now</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card hotel-card">
+                    <img src="./images/bg-image-4.jpg" alt="Capsule 4">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Capsule 4</h5>
+                        <button class="btn btn-primary" onclick="showLocationModal('Capsule 4')">Book Now</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card hotel-card">
+                    <img src="./images/Drawing&Sculpture.jpg" alt="Drawing & Sculpture Capsule">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Drawing & Sculpture Capsule</h5>
+                        <button class="btn btn-primary" onclick="showLocationModal('Drawing & Sculpture Capsule')">Book
+                            Now</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card hotel-card">
+                    <img src="./images/game_pad.jpg" alt="Game Pad Capsule">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Game Pad Capsule</h5>
+                        <button class="btn btn-primary" onclick="showLocationModal('Game Pad Capsule')">Book
+                            Now</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card hotel-card">
+                    <img src="./images/gym_capsule.jpg" alt="Gym Capsule">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Gym Capsule</h5>
+                        <button class="btn btn-primary" onclick="showLocationModal('Gym Capsule')">Book Now</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card hotel-card">
+                    <img src="./images/ArtStudio.jpg" alt="Art Studio Capsule">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Art Studio Capsule</h5>
+                        <button class="btn btn-primary" onclick="showLocationModal('Art Studio Capsule')">Book
+                            Now</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Location Modal -->
+    <div class="modal fade" id="locationModal" tabindex="-1" aria-labelledby="locationModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content border-0 shadow-lg overflow-hidden">
+
+                <img src="./images/Dubai-Static-img.jpg"
+                    alt="Dubai City Static map" style="width:100%; height:200px; object-fit:cover;">
+
+                <div class="modal-body text-center p-4">
+                    <h5 class="mb-3">Allow Location Access?</h5>
+                    <p class="text-muted">
+                        To personalize your booking experience and show nearby services, we'd like to access your
+                        location.
+                    </p>
+                    <div class="d-flex justify-content-center gap-3 mt-4">
+                        <button type="button" class="btn btn-outline-secondary px-4"
+                            onclick="redirectToBooking()">Deny</button>
+                        <button type="button" class="btn btn-primary px-4" onclick="getLocation()">Allow</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        let selectedHotelId = null;
+
+        function showLocationModal(hotelId) {
+            selectedHotelId = hotelId;
+            const modal = new bootstrap.Modal(document.getElementById('locationModal'));
+            modal.show();
+        }
+
+        function getLocation() {
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(
+                    function (position) {
+                        console.log("Location accessed:", position.coords.latitude, position.coords.longitude);
+                        redirectToBooking();
+                    },
+                    function (error) {
+                        alert("Could not get location. Redirecting anyway.");
+                        redirectToBooking();
+                    }
+                );
+            } else {
+                alert("Geolocation is not supported. Redirecting anyway.");
+                redirectToBooking();
+            }
+
+            // Close modal
+            const modalElement = document.getElementById('locationModal');
+            const modalInstance = bootstrap.Modal.getInstance(modalElement);
+            modalInstance.hide();
+        }
+
+        function redirectToBooking() {
+            // Replace with your actual booking page and pass hotel id
+            window.location.href = "booking.html?hotel=" + selectedHotelId;
+        }
+    </script>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login Form</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <style>
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('./images/bg-image-1.jpg') no-repeat center center fixed;
+            background-size: cover;
+            z-index: -2;
+        }
+
+        body::after {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.2);
+            z-index: -1;
+        }
+
+        .login-wrapper {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem;
+        }
+
+        .login-box {
+            display: flex;
+            max-width: 900px;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            backdrop-filter: blur(20px);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            flex-direction: row;
+        }
+
+        .login-image {
+            flex: 1;
+            background: url('./images/bg-image-3.png') no-repeat center center;
+            background-size: cover;
+            min-height: 300px;
+        }
+
+        .login-form {
+            flex: 1;
+            padding: 3rem 2rem;
+            background-color: rgba(0, 0, 0, 0.6);
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            border-left: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .login-form h2 {
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .form-control {
+            margin-bottom: 1rem;
+            padding: 0.75rem;
+            border-radius: 10px;
+            background-color: rgba(255, 255, 255, 0.95);
+            border: 1px solid rgba(0, 0, 0, 0.2);
+            color: #000;
+        }
+
+        .btn-login {
+            background-color: #fcb900;
+            color: #000;
+            font-weight: bold;
+            border: none;
+            width: 100%;
+        }
+
+        .google-login-btn {
+            margin-top: 1rem;
+        }
+
+        .login-form.rtl {
+            direction: rtl;
+            text-align: right;
+        }
+
+        .login-form.rtl .form-control {
+            text-align: right;
+        }
+
+        .login-form.rtl .btn,
+        .login-form.rtl select,
+        .login-form.rtl a,
+        .login-form.rtl p {
+            direction: rtl;
+            text-align: right;
+        }
+
+        @media (max-width: 768px) {
+
+            html,
+            body {
+                height: 100%;
+            }
+
+            .login-wrapper {
+                height: 100vh;
+                padding: 0;
+            }
+
+            .login-box {
+                flex-direction: column;
+                height: 100vh;
+                border: none;
+                background: #fff;
+                box-shadow: none;
+                backdrop-filter: none;
+            }
+
+            .login-image {
+                height: 30vh;
+                width: 100%;
+            }
+
+            .login-form {
+                height: 70vh;
+                width: 100%;
+                padding: 2rem 1rem;
+                background-color: #ffffff;
+                color: #000;
+                text-align: center;
+                border-left: none;
+                justify-content: flex-start;
+            }
+
+            .login-form h2,
+            .login-form p,
+            .login-form a {
+                color: #000 !important;
+            }
+
+            .login-form form {
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .form-control {
+                width: 100%;
+                background-color: #fff;
+                color: #000;
+                border: 1px solid #ccc;
+            }
+
+            .form-control::placeholder {
+                color: #555;
+            }
+
+            .btn-login {
+                width: 100%;
+            }
+
+            .btn-outline-light {
+                border: 1px solid #ccc;
+                color: #000;
+                background-color: #fff;
+            }
+
+            .btn-outline-light:hover {
+                background-color: #f5f5f5;
+            }
+
+            select.form-select {
+                background-color: #fff;
+                color: #000;
+            }
+
+            .account-note {
+                margin-top: 1rem;
+                color: #000 !important;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .login-form {
+                padding: 1rem 0.5rem;
+            }
+
+            .form-control,
+            .btn,
+            .form-select {
+                font-size: 0.9rem;
+            }
+
+            .google-login-btn img {
+                width: 20px;
+                height: 20px;
+            }
+        }
+
+        .account-note a {
+            color: #fcb900;
+            text-decoration: none;
+        }
+
+        /* Modal styles */
+        .glass-modal {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            color: #fff;
+            border-radius: 15px;
+        }
+
+        .modal-body,
+        .modal-title {
+            font-size: 1rem;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="login-wrapper">
+        <div class="login-box">
+            <div class="login-image"></div>
+            <div class="login-form">
+                <h2>Login to Your Account</h2>
+                <form onsubmit="return handleLogin(event)">
+                    <input type="email" id="email" class="form-control" placeholder="Email" required />
+                    <input type="password" id="password" class="form-control" placeholder="Password" required />
+                    <button type="submit" class="btn btn-login">Login</button>
+
+                    <div class="d-flex justify-content-between w-100 mt-2">
+                        <a href="#" class="text-light text-decoration-none small">Forgot Password?</a>
+                        <select id="language-select"
+                            class="form-select form-select-sm bg-light text-dark w-auto ms-auto"
+                            onchange="switchLanguage(this.value)">
+                            <option value="" disabled selected hidden>Select Language</option>
+                            <option value="en">English</option>
+                            <option value="ar">العربية</option>
+                        </select>
+                    </div>
+
+                    <button type="button"
+                        class="btn btn-outline-light google-login-btn d-flex align-items-center justify-content-center gap-2 w-100">
+                        <img src="https://img.icons8.com/color/24/000000/google-logo.png" alt="Gmail" />
+                        Login with Gmail
+                    </button>
+                </form>
+
+                <p class="account-note small mt-3">
+                    Don’t have an account yet?
+                    <a href="register.html" class="text-warning text-decoration-none">Register</a>.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content glass-modal text-center">
+                <div class="modal-header border-0">
+                    <h5 class="modal-title w-100" id="loginModalLabel">Location Required</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"
+                        style="filter: invert(1);"></button>
+                </div>
+                <div class="modal-body">
+                    ⚠️ Location access is denied or unavailable.<br />Please enable location to continue.
+                </div>
+                <div class="modal-footer border-0">
+                    <button type="button" class="btn btn-warning w-100" data-bs-dismiss="modal">OK</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        function handleLogin(e) {
+            e.preventDefault();
+
+            if (!navigator.geolocation || !navigator.permissions) {
+                showModal("❌ Geolocation or Permissions API not supported on this browser.");
+                return;
+            }
+
+            navigator.permissions.query({ name: 'geolocation' }).then((result) => {
+                if (result.state === 'denied') {
+                    showModal("⚠️ Location access has been denied.<br>Please enable it in your browser settings.");
+                    return;
+                }
+
+                navigator.geolocation.getCurrentPosition(
+                    (position) => {
+                        const lat = position.coords.latitude;
+                        const lon = position.coords.longitude;
+                        window.location.href = 'dashboard.html';
+                    },
+                    (error) => {
+                        showModal("⚠️ Unable to retrieve your location.<br>Please allow location access.");
+                    }
+                );
+            });
+        }
+
+        function showModal(message) {
+            document.querySelector("#loginModal .modal-body").innerHTML = message;
+            const modal = new bootstrap.Modal(document.getElementById("loginModal"));
+            modal.show();
+        }
+
+        function switchLanguage(lang) {
+            const form = document.querySelector('.login-form');
+            const html = document.documentElement;
+
+            if (lang === 'ar') {
+                html.setAttribute('dir', 'rtl');
+                form.classList.add('rtl');
+                document.querySelector('h2').innerText = "تسجيل الدخول إلى حسابك";
+                document.getElementById('email').placeholder = "البريد الإلكتروني";
+                document.getElementById('password').placeholder = "كلمة المرور";
+                document.querySelector('a.text-light').innerText = "هل نسيت كلمة المرور؟";
+                document.querySelector('.btn-login').innerText = "تسجيل الدخول";
+                document.querySelector('.btn-outline-light').innerHTML =
+                    `<img src="https://img.icons8.com/color/24/000000/google-logo.png" alt="Gmail" /> تسجيل الدخول عبر جوجل`;
+                document.querySelector('.account-note').innerHTML =
+                    `إذا لم يكن لديك حساب، يجب <a href="register.html" class="text-warning text-decoration-none">التسجيل أولاً</a>.`;
+            } else {
+                html.setAttribute('dir', 'ltr');
+                form.classList.remove('rtl');
+                document.querySelector('h2').innerText = "Login to Your Account";
+                document.getElementById('email').placeholder = "Email";
+                document.getElementById('password').placeholder = "Password";
+                document.querySelector('a.text-light').innerText = "Forgot Password?";
+                document.querySelector('.btn-login').innerText = "Login";
+                document.querySelector('.btn-outline-light').innerHTML =
+                    `<img src="https://img.icons8.com/color/24/000000/google-logo.png" alt="Gmail" /> Login with Gmail`;
+                document.querySelector('.account-note').innerHTML =
+                    `Don’t have an account yet? <a href="register.html" class="text-warning text-decoration-none">Register</a>.`;
+            }
+        }
+    </script>
+
+</body>
+
+</html>
