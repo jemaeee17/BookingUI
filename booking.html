@@ -96,6 +96,32 @@
                 border: none;
             }
         }
+
+        @media (min-width: 577px) {
+            .form-container {
+                background: rgba(255, 255, 255, 0.15);
+                border: 1px solid rgba(255, 255, 255, 0.35);
+                backdrop-filter: blur(20px) saturate(160%);
+                -webkit-backdrop-filter: blur(20px) saturate(160%);
+                box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+                color: white;
+                transition: all 0.3s ease-in-out;
+            }
+
+            .form-control,
+            textarea {
+                background-color: rgba(255, 255, 255, 0.25);
+                border-color: rgba(255, 255, 255, 0.5);
+            }
+
+            .form-control:focus,
+            textarea:focus {
+                background-color: rgba(255, 255, 255, 0.35);
+                outline: none;
+                border-color: #ffc107;
+                box-shadow: 0 0 0 0.2rem rgba(252, 185, 0, 0.25);
+            }
+        }
     </style>
 </head>
 
@@ -106,9 +132,12 @@
     <div class="form-container text-center">
         <h2 class="mb-4">Experience Luxury</h2>
         <form>
-            <input type="text" id="capsuleInput" class="form-control mb-2" placeholder="Capsule Type" readonly required>
+            <input type="text" id="capsuleInput" class="form-control mb-2" placeholder="Capsule/Event" readonly
+                required>
+            <input type="text" id="dayInput" class="form-control mb-2" placeholder="Day" readonly required>
             <input type="time" id="timeInput" class="form-control mb-2" required>
-            <input type="date" class="form-control mb-2" required>
+            <input type="text" id="locationInput" class="form-control mb-2" placeholder="Location" readonly required>
+            <input type="date" id="dateInput" class="form-control mb-2" required>
             <textarea class="form-control mb-2" placeholder="Special Requests (optional)"></textarea>
             <button type="submit" class="btn btn-warning w-100">Book Now</button>
             <a href="dashboard.html" class="btn btn-link d-block mt-2">← Back to Home</a>
@@ -116,31 +145,30 @@
     </div>
 
     <script>
-        const capsuleData = {
-            "Capsule 1": "08:00",
-            "Capsule 2": "13:00",
-            "Capsule 3": "18:00",
-            "Capsule 4": "10:00",
-            "Game Pad Capsule": "14:00",
-            "Gym Capsule": "09:00",
-            "Art Studio Capsule": "09:00",
-            "Drawing & Sculpture Capsule": "11:00",
-            "Cultural Activities": "15:00",
-            "Museum Tour": "12:00",
-            "Street Show": "17:00",
-            "Theater Show": "19:00"
-        };
-
         window.addEventListener('DOMContentLoaded', () => {
             const urlParams = new URLSearchParams(window.location.search);
-            const selectedCapsule = urlParams.get('hotel');
-            const imageName = urlParams.get('img');
 
-            if (selectedCapsule && capsuleData[selectedCapsule]) {
-                document.getElementById('capsuleInput').value = selectedCapsule;
-                document.getElementById('timeInput').value = capsuleData[selectedCapsule];
+            const capsule = urlParams.get('hotel');
+            const imageName = urlParams.get('img');
+            const day = urlParams.get('day');
+            const time = urlParams.get('time'); // Format: HH:mm
+            const date = urlParams.get('date'); // Format: YYYY-MM-DD
+            const location = urlParams.get('location');
+
+            if (capsule) document.getElementById('capsuleInput').value = capsule;
+            if (day) document.getElementById('dayInput').value = day;
+            if (location) document.getElementById('locationInput').value = location;
+
+            if (time && /^([0-1][0-9]|2[0-3]):[0-5][0-9]$/.test(time)) {
+                document.getElementById('timeInput').value = time;
             }
 
+            // Autofill date only if valid (format: YYYY-MM-DD)
+            if (date && /^\d{4}-\d{2}-\d{2}$/.test(date)) {
+                document.getElementById('dateInput').value = date;
+            }
+
+            // Set background image
             if (imageName) {
                 document.body.style.backgroundImage = `url('./images/${imageName}')`;
                 const mobileImg = document.querySelector('.mobile-image');
@@ -150,6 +178,7 @@
             }
         });
     </script>
+
 
 </body>
 

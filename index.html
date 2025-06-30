@@ -142,12 +142,15 @@
             }
 
             .login-image {
-                height: 30vh;
+                height: 30%;
+                min-height: 30%;
+                flex: 0 0 30%;
                 width: 100%;
             }
 
             .login-form {
-                height: 70vh;
+                height: 70%;
+                flex: 0 0 70%;
                 width: 100%;
                 padding: 2rem 1rem;
                 background-color: #ffffff;
@@ -155,6 +158,10 @@
                 text-align: center;
                 border-left: none;
                 justify-content: flex-start;
+            }
+
+            .login-form h2 {
+                margin-top: 2rem;
             }
 
             .login-form h2,
@@ -257,7 +264,7 @@
                     <input type="password" id="password" class="form-control" placeholder="Password" required />
                     <button type="submit" class="btn btn-login">Login</button>
 
-                    <div class="d-flex justify-content-between w-100 mt-2">
+                    <div class="d-flex justify-content-between w-100 mt-4">
                         <a href="#" class="text-light text-decoration-none small">Forgot Password?</a>
                         <select id="language-select"
                             class="form-select form-select-sm bg-light text-dark w-auto ms-auto"
