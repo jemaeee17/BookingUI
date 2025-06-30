@@ -19,8 +19,8 @@
         }
 
         body {
-            background: url('./images/bg-image-4.jpg') no-repeat center center fixed;
             background-size: cover;
+            background-position: center;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -75,7 +75,6 @@
         @media (max-width: 576px) {
             body {
                 flex-direction: column;
-                background: none;
                 background-color: #000;
                 overflow: hidden;
             }
@@ -83,8 +82,8 @@
             .mobile-image {
                 height: 30vh;
                 width: 100%;
-                background: url('./images/bg-image-4.jpg') no-repeat center center;
                 background-size: cover;
+                background-position: center;
             }
 
             .form-container {
@@ -102,23 +101,16 @@
 
 <body>
 
-    <!-- Mobile Image Section -->
     <div class="mobile-image d-sm-none"></div>
 
-    <!-- Booking Form -->
     <div class="form-container text-center">
         <h2 class="mb-4">Experience Luxury</h2>
         <form>
-            <!-- Autofilled Capsule -->
             <input type="text" id="capsuleInput" class="form-control mb-2" placeholder="Capsule Type" readonly required>
-
-            <!-- Autofilled Time -->
             <input type="time" id="timeInput" class="form-control mb-2" required>
-
             <input type="date" class="form-control mb-2" required>
             <textarea class="form-control mb-2" placeholder="Special Requests (optional)"></textarea>
             <button type="submit" class="btn btn-warning w-100">Book Now</button>
-
             <a href="dashboard.html" class="btn btn-link d-block mt-2">← Back to Home</a>
         </form>
     </div>
@@ -129,7 +121,7 @@
             "Capsule 2": "13:00",
             "Capsule 3": "18:00",
             "Capsule 4": "10:00",
-            "Game Capsule": "14:00",
+            "Game Pad Capsule": "14:00",
             "Gym Capsule": "09:00",
             "Art Studio Capsule": "09:00",
             "Drawing & Sculpture Capsule": "11:00"
@@ -138,10 +130,19 @@
         window.addEventListener('DOMContentLoaded', () => {
             const urlParams = new URLSearchParams(window.location.search);
             const selectedCapsule = urlParams.get('hotel');
+            const imageName = urlParams.get('img');
 
             if (selectedCapsule && capsuleData[selectedCapsule]) {
                 document.getElementById('capsuleInput').value = selectedCapsule;
                 document.getElementById('timeInput').value = capsuleData[selectedCapsule];
+            }
+
+            if (imageName) {
+                document.body.style.backgroundImage = `url('./images/${imageName}')`;
+                const mobileImg = document.querySelector('.mobile-image');
+                if (mobileImg) {
+                    mobileImg.style.backgroundImage = `url('./images/${imageName}')`;
+                }
             }
         });
     </script>
