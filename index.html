@@ -258,14 +258,16 @@
         <div class="login-box">
             <div class="login-image"></div>
             <div class="login-form">
-                <h2>Login to Your Account</h2>
+                <h2 data-i18n="login_heading">Login to Your Account</h2>
                 <form onsubmit="return handleLogin(event)">
-                    <input type="email" id="email" class="form-control" placeholder="Email" required />
-                    <input type="password" id="password" class="form-control" placeholder="Password" required />
-                    <button type="submit" class="btn btn-login">Login</button>
+                    <input type="email" id="email" class="form-control" data-i18n-placeholder="Email" required />
+                    <input type="password" id="password" class="form-control" data-i18n-placeholder="Password"
+                        required />
+                    <button type="submit" class="btn btn-login" data-i18n="login_button">Login</button>
 
                     <div class="d-flex justify-content-between w-100 mt-4">
-                        <a href="#" class="text-light text-decoration-none small">Forgot Password?</a>
+                        <a href="#" class="text-light text-decoration-none small" data-i18n="forgot_password">Forgot
+                            Password?</a>
                         <select id="language-select"
                             class="form-select form-select-sm bg-light text-dark w-auto ms-auto"
                             onchange="switchLanguage(this.value)">
@@ -276,13 +278,14 @@
                     </div>
 
                     <button type="button"
-                        class="btn btn-outline-light google-login-btn d-flex align-items-center justify-content-center gap-2 w-100">
+                        class="btn btn-outline-light google-login-btn d-flex align-items-center justify-content-center gap-2 w-100"
+                        data-i18n-html="login_google">
                         <img src="https://img.icons8.com/color/24/000000/google-logo.png" alt="Gmail" />
                         Login with Gmail
                     </button>
                 </form>
 
-                <p class="account-note small mt-3">
+                <p class="account-note small mt-3" data-i18n-html="no_account">
                     Don’t have an account yet?
                     <a href="register.html" class="text-warning text-decoration-none">Register</a>.
                 </p>
@@ -294,15 +297,15 @@
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content glass-modal text-center">
                 <div class="modal-header border-0">
-                    <h5 class="modal-title w-100" id="loginModalLabel">Location Required</h5>
+                    <h5 class="modal-title w-100" id="loginModalLabel" data-i18n="modal_title">Location Required</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"
                         style="filter: invert(1);"></button>
                 </div>
-                <div class="modal-body">
+                <div class="modal-body" data-i18n-html="modal_body">
                     ⚠️ Location access is denied or unavailable.<br />Please enable location to continue.
                 </div>
                 <div class="modal-footer border-0">
-                    <button type="button" class="btn btn-warning w-100" data-bs-dismiss="modal">OK</button>
+                    <button type="button" class="btn btn-warning w-100" data-i18n="modal_ok">OK</button>
                 </div>
             </div>
         </div>
@@ -345,6 +348,7 @@
         }
 
         function switchLanguage(lang) {
+            localStorage.setItem("lang", lang); 
             const form = document.querySelector('.login-form');
             const html = document.documentElement;
 
@@ -375,6 +379,7 @@
             }
         }
     </script>
+    <script src="assets/js/lang.js"></script>
 
 </body>
 

@@ -263,42 +263,46 @@
         <div class="background-block"></div>
 
         <form class="registration-form" onsubmit="return handleSubmit(event)">
-            <h2 class="text-center mb-3">Register</h2>
+            <h2 class="text-center mb-3" data-i18n="register_title">Register</h2>
 
             <div class="mb-2">
-                <label for="fullName" class="form-label">Full Name</label>
-                <input type="text" class="form-control" id="fullName" placeholder="Enter your full name" required />
-            </div>
-
-            <div class="mb-2">
-                <label for="email" class="form-label">Email</label>
-                <input type="email" class="form-control" id="email" placeholder="Enter your email" required />
-            </div>
-
-            <div class="mb-2">
-                <label for="password" class="form-label">Password</label>
-                <input type="password" class="form-control" id="password" placeholder="Enter password" required />
-            </div>
-
-            <div class="mb-2">
-                <label for="confirmPassword" class="form-label">Confirm Password</label>
-                <input type="password" class="form-control" id="confirmPassword" placeholder="Confirm password"
+                <label for="fullName" class="form-label" data-i18n="label_fullname">Full Name</label>
+                <input type="text" class="form-control" id="fullName" data-i18n-placeholder="placeholder_fullname"
                     required />
             </div>
 
             <div class="mb-2">
-                <label for="dob" class="form-label">Date of Birth</label>
+                <label for="email" class="form-label" data-i18n="label_email">Email</label>
+                <input type="email" class="form-control" id="email" data-i18n-placeholder="placeholder_email"
+                    required />
+            </div>
+
+            <div class="mb-2">
+                <label for="password" class="form-label" data-i18n="label_password">Password</label>
+                <input type="password" class="form-control" id="password" data-i18n-placeholder="placeholder_password"
+                    required />
+            </div>
+
+            <div class="mb-2">
+                <label for="confirmPassword" class="form-label" data-i18n="label_confirm_password">Confirm
+                    Password</label>
+                <input type="password" class="form-control" id="confirmPassword"
+                    data-i18n-placeholder="placeholder_confirm_password" required />
+            </div>
+
+            <div class="mb-2">
+                <label for="dob" class="form-label" data-i18n="label_dob">Date of Birth</label>
                 <input type="date" class="form-control" id="dob" required />
             </div>
 
             <div class="mb-2">
-                <label for="contact" class="form-label">Contact Number (UAE)</label>
+                <label for="contact" class="form-label" data-i18n="label_contact">Contact Number (UAE)</label>
                 <input type="tel" class="form-control with-flag" id="contact" pattern="^05\d{8}$" maxlength="10"
                     required />
             </div>
 
             <div class="mb-3">
-                <label class="form-label d-block">Gender</label>
+                <label class="form-label d-block" data-i18n="label_gender">Gender</label>
                 <div class="d-flex align-items-center gap-2">
                     <div class="gender-toggle position-relative">
                         <input type="checkbox" id="genderSwitch" onchange="updateGender()" />
@@ -317,12 +321,12 @@
 
             <div class="form-check mb-3">
                 <input class="form-check-input" type="checkbox" id="terms" required />
-                <label class="form-check-label" for="terms">
+                <label class="form-check-label" for="terms" data-i18n-html="label_terms">
                     I accept the <a href="#">terms and conditions</a>.
                 </label>
             </div>
 
-            <button type="submit" class="btn w-100">Register</button>
+            <button type="submit" class="btn w-100" data-i18n="register_button">Register</button>
         </form>
     </div>
 
@@ -339,6 +343,9 @@
             alert("Form submitted!\nGender: " + gender + "\nContact: " + contact);
         }
     </script>
+
+    <script src="assets/js/lang.js"></script>
+
 </body>
 
 </html>

@@ -131,7 +131,7 @@
 
     <nav class="navbar navbar-expand-lg navbar-dark shadow-sm fixed-top" style="background-color: #2c3e50;">
         <div class="container">
-            <a class="navbar-brand fw-semibold text-gold" href="#">Assafbook</a>
+            <a class="navbar-brand fw-semibold text-gold" href="#" data-i18n="navbar.brand">Assafbook</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -139,16 +139,16 @@
             <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link active text-gold" href="#">Home</a>
+                        <a class="nav-link active text-gold" href="#" data-i18n="navbar.home">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-light" href="#">About Us</a>
+                        <a class="nav-link text-light" href="#" data-i18n="navbar.about">About Us</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-light" href="#">Services</a>
+                        <a class="nav-link text-light" href="#" data-i18n="navbar.services">Services</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-light" href="#">Contact Us</a>
+                        <a class="nav-link text-light" href="#" data-i18n="navbar.contact">Contact Us</a>
                     </li>
                 </ul>
             </div>
@@ -158,8 +158,8 @@
                     🌐
                 </button>
                 <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="languageDropdown">
-                    <li><a class="dropdown-item" href="#">English</a></li>
-                    <li><a class="dropdown-item" href="#">العربية</a></li>
+                    <li><a class="dropdown-item" href="#" onclick="changeLang('en')">English</a></li>
+                    <li><a class="dropdown-item" href="#" onclick="changeLang('ar')">العربية</a></li>
                 </ul>
             </div>
         </div>
@@ -216,7 +216,8 @@
 
     <!-- Search Bar -->
     <div class="container mb-4">
-        <input type="text" id="searchInput" class="form-control" placeholder="Search capsules or events...">
+        <input type="text" id="searchInput" class="form-control" data-i18n-placeholder="search.placeholder"
+            placeholder="Search capsules or events...">
     </div>
 
     <!-- Cards -->
@@ -227,8 +228,9 @@
                 <div class="card hotel-card">
                     <img src="./images/bg-image-1.jpg" alt="Capsule 1">
                     <div class="card-body text-center">
-                        <h5 class="card-title">Capsule 1</h5>
-                        <button class="btn btn-primary" onclick="showLocationModal('Capsule 1')">Book Now</button>
+                        <h5 class="card-title" data-i18n="capsule.1">Capsule 1</h5>
+                        <button class="btn btn-primary" data-i18n="btn.book" onclick="showLocationModal(this)"
+                            data-hotel="Capsule 1" data-img="bg-image-1.jpg">Book Now</button>
                     </div>
                 </div>
             </div>
@@ -236,8 +238,9 @@
                 <div class="card hotel-card">
                     <img src="./images/bg-image-2.jpg" alt="Capsule 2">
                     <div class="card-body text-center">
-                        <h5 class="card-title">Capsule 2</h5>
-                        <button class="btn btn-primary" onclick="showLocationModal('Capsule 2')">Book Now</button>
+                        <h5 class="card-title" data-i18n="capsule.2">Capsule 2</h5>
+                        <button class="btn btn-primary" data-i18n="btn.book" onclick="showLocationModal(this)"
+                            data-hotel="Capsule 2" data-img="bg-image-2.jpg">Book Now</button>
                     </div>
                 </div>
             </div>
@@ -245,8 +248,9 @@
                 <div class="card hotel-card">
                     <img src="./images/bg-image-3.png" alt="Capsule 3">
                     <div class="card-body text-center">
-                        <h5 class="card-title">Capsule 3</h5>
-                        <button class="btn btn-primary" onclick="showLocationModal('Capsule 3')">Book Now</button>
+                        <h5 class="card-title" data-i18n="capsule.3">Capsule 3</h5>
+                        <button class="btn btn-primary" data-i18n="btn.book" onclick="showLocationModal(this)"
+                            data-hotel="Capsule 3" data-img="bg-image-3.png">Book Now</button>
                     </div>
                 </div>
             </div>
@@ -254,8 +258,9 @@
                 <div class="card hotel-card">
                     <img src="./images/bg-image-4.jpg" alt="Capsule 4">
                     <div class="card-body text-center">
-                        <h5 class="card-title">Capsule 4</h5>
-                        <button class="btn btn-primary" onclick="showLocationModal('Capsule 4')">Book Now</button>
+                        <h5 class="card-title" data-i18n="capsule.4">Capsule 4</h5>
+                        <button class="btn btn-primary" data-i18n="btn.book" onclick="showLocationModal(this)"
+                            data-hotel="Capsule 4" data-img="bg-image-4.jpg">Book Now</button>
                     </div>
                 </div>
             </div>
@@ -263,8 +268,9 @@
                 <div class="card hotel-card">
                     <img src="./images/ArtStudio.jpg" alt="Art Studio Capsule">
                     <div class="card-body text-center">
-                        <h5 class="card-title">Art Studio Capsule</h5>
-                        <button class="btn btn-primary" onclick="showLocationModal('Art Studio Capsule')">Book
+                        <h5 class="card-title" data-i18n="capsule.art_studio">Art Studio Capsule</h5>
+                        <button class="btn btn-primary" data-i18n="btn.book" onclick="showLocationModal(this)"
+                            data-hotel="Art Studio Capsule" data-img="ArtStudio.jpg">Book
                             Now</button>
                     </div>
                 </div>
@@ -273,8 +279,9 @@
                 <div class="card hotel-card">
                     <img src="./images/Drawing&Sculpture.jpg" alt="Drawing & Sculpture Capsule">
                     <div class="card-body text-center">
-                        <h5 class="card-title">Drawing & Sculpture Capsule</h5>
-                        <button class="btn btn-primary" onclick="showLocationModal('Drawing & Sculpture Capsule')">Book
+                        <h5 class="card-title" data-i18n="capsule.drawing_sculpture">Drawing & Sculpture Capsule</h5>
+                        <button class="btn btn-primary" data-i18n="btn.book" onclick="showLocationModal(this)"
+                            data-hotel="Drawing & Sculpture Capsule" data-img="Drawing&Sculpture.jpg">Book
                             Now</button>
                     </div>
                 </div>
@@ -283,8 +290,9 @@
                 <div class="card hotel-card">
                     <img src="./images/game_pad.jpg" alt="Game Pad Capsule">
                     <div class="card-body text-center">
-                        <h5 class="card-title">Game Pad Capsule</h5>
-                        <button class="btn btn-primary" onclick="showLocationModal('Game Pad Capsule')">Book
+                        <h5 class="card-title" data-i18n="capsule.gamepad">Game Pad Capsule</h5>
+                        <button class="btn btn-primary" data-i18n="btn.book" onclick="showLocationModal(this)"
+                            data-hotel="Game Pad Capsule" data-img="game_pad.jpg">Book
                             Now</button>
                     </div>
                 </div>
@@ -293,8 +301,9 @@
                 <div class="card hotel-card">
                     <img src="./images/gym-image.png" alt="Gym Capsule">
                     <div class="card-body text-center">
-                        <h5 class="card-title">Gym Capsule</h5>
-                        <button class="btn btn-primary" onclick="showLocationModal('Gym Capsule')">Book Now</button>
+                        <h5 class="card-title" data-i18n="capsule.gym_capsule">Gym Capsule</h5>
+                        <button class="btn btn-primary" data-i18n="btn.book" onclick="showLocationModal(this)"
+                            data-hotel="Gym Capsule" data-img="gym-image.png">Book Now</button>
                     </div>
                 </div>
             </div>
@@ -302,8 +311,10 @@
                 <div class="card hotel-card">
                     <img src="./images/Museum.jpg" alt="Museum">
                     <div class="card-body text-center">
-                        <h5 class="card-title">Museum</h5>
-                        <button class="btn btn-primary" onclick="showLocationModal('Museum')">Book Now</button>
+                        <h5 class="card-title" data-i18n="capsule.museum">Museum</h5>
+                        <button class="btn btn-primary" data-i18n="btn.book" onclick="showLocationModal(this)"
+                            data-hotel="Museum" data-img="Museum.jpg">Book
+                            Now</button>
                     </div>
                 </div>
             </div>
@@ -311,8 +322,9 @@
                 <div class="card hotel-card">
                     <img src="./images/StreetShow.jpg" alt="Street Show">
                     <div class="card-body text-center">
-                        <h5 class="card-title">Street Show</h5>
-                        <button class="btn btn-primary" onclick="showLocationModal('Street Show')">Book Now</button>
+                        <h5 class="card-title" data-i18n="capsule.street_show">Street Show</h5>
+                        <button class="btn btn-primary" data-i18n="btn.book" onclick="showLocationModal(this)"
+                            data-hotel="Street Show" data-img="StreetShow.jpg">Book Now</button>
                     </div>
                 </div>
             </div>
@@ -320,8 +332,9 @@
                 <div class="card hotel-card">
                     <img src="./images/Theater_shows.png" alt="Theater Shows">
                     <div class="card-body text-center">
-                        <h5 class="card-title">Theater Shows</h5>
-                        <button class="btn btn-primary" onclick="showLocationModal('Theater Shows')">Book Now</button>
+                        <h5 class="card-title" data-i18n="capsule.theater">Theater Shows</h5>
+                        <button class="btn btn-primary" data-i18n="btn.book" onclick="showLocationModal(this)"
+                            data-hotel="Theater Show" data-img="Theater_shows.png">Book Now</button>
                     </div>
                 </div>
             </div>
@@ -329,8 +342,9 @@
                 <div class="card hotel-card">
                     <img src="./images/Cultural_activities.jpg" alt="Cultural Activities">
                     <div class="card-body text-center">
-                        <h5 class="card-title">Cultural Activities</h5>
-                        <button class="btn btn-primary" onclick="showLocationModal('Cultural Activities')">Book
+                        <h5 class="card-title" data-i18n="capsule.cultural">Cultural Activities</h5>
+                        <button class="btn btn-primary" data-i18n="btn.book" onclick="showLocationModal(this)"
+                            data-hotel="Cultural Activities" data-img="Cultural_activities.jpg">Book
                             Now</button>
                     </div>
                 </div>
@@ -343,23 +357,23 @@
         <div class="container">
             <div class="row align-items-center">
                 <!-- Text Content -->
-                <div class="col-lg-6 mb-4 mb-lg-0">
-                    <h2 class="mb-4" style="color: #2c3e50; font-weight: 600;">About Us</h2>
-                    <p class="lead" style="color: #333333; line-height: 1.7;">
+                <div class="col-lg-6 mb-4 mb-lg-0" data-i18n-html="about.content">
+                    <h2 class="mb-4" style="color: #2c3e50; font-weight: 600;" data-i18n="about.title">About Us</h2>
+                    <p class="lead" style="color: #333333; line-height: 1.7;" data-i18n-html="about.intro">
                         <strong>Assafbooking</strong> is an innovative and user-friendly web and mobile application
                         designed to simplify the booking process for a wide range of services and experiences. With a
                         focus on convenience and accessibility, the platform offers users the ability to reserve and
                         book unique spaces such as capsule rooms, capsule hotels, capsule offices, and capsule shops,
                         providing a modern and efficient solution for accommodation, work, and retail needs.
                     </p>
-                    <p class="lead" style="color: #333333; line-height: 1.7;">
+                    <p class="lead" style="color: #333333; line-height: 1.7;" data-i18n="about.entertainment">
                         In addition to these practical offerings, Assafbooking also provides a diverse array of
                         entertainment options tailored to various interests. From street shows and theater performances
                         to art studio capsules, gym capsules, museum shows, drawing and sculpture capsules, game pad
                         capsules, and cultural activities, users can easily explore and engage in a multitude of leisure
                         experiences.
                     </p>
-                    <p class="lead" style="color: #333333; line-height: 1.7;">
+                    <p class="lead" style="color: #333333; line-height: 1.7;" data-i18n-html="about.summary">
                         Based in <strong>Dubai</strong>, Assafbooking caters to different cities across the United Arab
                         Emirates, ensuring that users have access to a broad selection of services and activities. By
                         connecting customers with a variety of service providers in the region, Assafbooking serves as a
@@ -396,16 +410,19 @@
     <section id="services" class="py-5" style="background-color: #f9f9f9;">
         <div class="container">
             <!-- Services Intro Text -->
-            <div class="row justify-content-center mb-4">
+            <div class="row justify-content-center mb-4" data-i18n-html="services.content">
                 <div class="col-lg-10 text-center">
-                    <h2 class="mb-4" style="color: #2c3e50; font-weight: 600; font-size: 2rem;">Our Services</h2>
-                    <p style="color: #333333; font-size: 1rem; line-height: 1.8;">
+                    <h2 class="mb-4" style="color: #2c3e50; font-weight: 600; font-size: 2rem;"
+                        data-i18n="services.title">Our Services</h2>
+                    <p data-i18n-html="services.description1"
+                        style="color: #333333; font-size: 1rem; line-height: 1.8;">
                         <strong>Assafbooking</strong> provides rental and booking services for various capsule-based
                         amenities such as capsule shops, offices, gyms, hotels, and rooms. These services are designed
                         to offer compact, functional spaces that cater to diverse needs, ranging from work and retail to
                         fitness and accommodation.
                     </p>
-                    <p style="color: #333333; font-size: 1rem; line-height: 1.8;">
+                    <p data-i18n-html="services.description2"
+                        style="color: #333333; font-size: 1rem; line-height: 1.8;">
                         The booking rates range from <strong>$20 USD</strong> to <strong>$60 USD</strong>, depending on
                         the specific service and location. Assafbooking's user-friendly web and mobile application
                         covers various cities across the United Arab Emirates, including Dubai, ensuring users can
@@ -423,8 +440,9 @@
                         <img src="./images/bg-image-1.jpg" class="card-img-top" alt="Capsule Shop"
                             style="height: 180px; object-fit: cover;">
                         <div class="card-body text-center">
-                            <h5 class="card-title">Capsule Shops</h5>
-                            <p class="card-text">Retail micro-shops tailored for pop-up brands and sellers.</p>
+                            <h5 class="card-title" data-i18n="services.shop.title">Capsule Shops</h5>
+                            <p class="card-text" data-i18n="services.shop.description">Retail micro-shops tailored for
+                                pop-up brands and sellers.</p>
                         </div>
                     </div>
 
@@ -434,8 +452,9 @@
                         <img src="./images/bg-image-2.jpg" class="card-img-top" alt="Capsule Office"
                             style="height: 180px; object-fit: cover;">
                         <div class="card-body text-center">
-                            <h5 class="card-title">Capsule Offices</h5>
-                            <p class="card-text">Private workspaces ideal for freelancers and professionals.</p>
+                            <h5 class="card-title" data-i18n="services.office.title">Capsule Offices</h5>
+                            <p class="card-text" data-i18n="services.office.description">Private workspaces ideal for
+                                freelancers and professionals.</p>
                         </div>
                     </div>
 
@@ -445,8 +464,9 @@
                         <img src="./images/gym-image.png" class="card-img-top" alt="Capsule Gym"
                             style="height: 180px; object-fit: cover;">
                         <div class="card-body text-center">
-                            <h5 class="card-title">Capsule Gyms</h5>
-                            <p class="card-text">Fitness pods designed for personalized, efficient workouts.</p>
+                            <h5 class="card-title" data-i18n="services.gym.title">Capsule Gyms</h5>
+                            <p class="card-text" data-i18n="services.gym.description">Fitness pods designed for
+                                personalized, efficient workouts.</p>
                         </div>
                     </div>
 
@@ -456,8 +476,9 @@
                         <img src="./images/bg-image-3.png" class="card-img-top" alt="Capsule Hotel"
                             style="height: 180px; object-fit: cover;">
                         <div class="card-body text-center">
-                            <h5 class="card-title">Capsule Hotels</h5>
-                            <p class="card-text">Compact and cozy accommodation for solo travelers and tourists.</p>
+                            <h5 class="card-title" data-i18n="services.hotel.title">Capsule Hotels</h5>
+                            <p class="card-text" data-i18n="services.hotel.description">Compact and cozy accommodation
+                                for solo travelers and tourists.</p>
                         </div>
                     </div>
 
@@ -467,8 +488,9 @@
                         <img src="./images/bg-image-4.jpg" class="card-img-top" alt="Capsule Room"
                             style="height: 180px; object-fit: cover;">
                         <div class="card-body text-center">
-                            <h5 class="card-title">Capsule Rooms</h5>
-                            <p class="card-text">Private rooms with efficient layouts for short or long stays.</p>
+                            <h5 class="card-title" data-i18n="services.room.title">Capsule Rooms</h5>
+                            <p class="card-text" data-i18n="services.room.description">Private rooms with efficient
+                                layouts for short or long stays.</p>
                         </div>
                     </div>
                 </div>
@@ -482,14 +504,15 @@
             <div class="row align-items-center">
                 <!-- Text Column -->
                 <div class="col-md-6 mb-4 mb-md-0">
-                    <h2 class="mb-4" style="color: #2c3e50; font-weight: 600;">Contact Us</h2>
-                    <p class="lead mb-3" style="color: #555;">
+                    <h2 class="mb-4" style="color: #2c3e50; font-weight: 600;" data-i18n="contact.title">Contact Us</h2>
+                    <p class="lead mb-3" style="color: #555;" data-i18n-html="contact.address">
                         <strong>Riyadh Office</strong><br>
                         Al Faisaliah Tower, 18th + 13th Floor<br>
                         King Fahd Road, Olaya<br>
                         P.O. Box 12212 No. 7277
                     </p>
-                    <p style="color: #888;">Feel free to visit or reach out for bookings and inquiries.</p>
+                    <p style="color: #888;" data-i18n="contact.note">Feel free to visit or reach out for bookings and
+                        inquiries.</p>
                 </div>
 
                 <!-- Image Column -->
@@ -506,12 +529,15 @@
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content border-0 shadow-lg">
                 <div class="modal-body text-center p-4">
-                    <h5 class="mb-3">Allow Location Access</h5>
-                    <p class="text-muted">We need your permission to access your location to suggest the best available
+                    <h5 class="mb-3" data-i18n="modal.title">Allow Location Access</h5>
+                    <p class="text-muted" data-i18n="modal.desc">We need your permission to access your location to
+                        suggest the best available
                         branches.</p>
                     <div class="d-flex justify-content-center gap-3">
-                        <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Deny</button>
-                        <button type="button" class="btn btn-primary" onclick="proceedAfterPermission()">Allow</button>
+                        <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal"
+                            data-i18n="btn.deny">Deny</button>
+                        <button type="button" class="btn btn-primary" data-i18n="btn.allow"
+                            onclick="proceedAfterPermission()">Allow</button>
                     </div>
                 </div>
             </div>
@@ -525,25 +551,28 @@
                 <img src="./images/Dubai-Static-img.jpg" alt="Map" style="width:100%; height:200px; object-fit:cover;">
                 <div class="modal-body text-center p-4">
                     <h5 class="mb-3" id="modalTitle">Select Schedule</h5>
-                    <p class="text-muted">Choose your preferred day, time, and location</p>
+                    <p class="text-muted" data-i18n="booking.choosePrompt">Choose your preferred day, time, and location
+                    </p>
                     <select id="daySelect" class="form-select mb-2">
-                        <option>Monday</option>
-                        <option>Tuesday</option>
-                        <option>Wednesday</option>
+                        <option data-i18n="days.monday">Monday</option>
+                        <option data-i18n="days.tuesday">Tuesday</option>
+                        <option data-i18n="days.wednesday">Wednesday</option>
                     </select>
                     <select id="timeSelect" class="form-select mb-2">
-                        <option>09:00 AM</option>
-                        <option>01:00 PM</option>
-                        <option>05:00 PM</option>
+                        <option data-i18n="time.9am">09:00 AM</option>
+                        <option data-i18n="time.1pm">01:00 PM</option>
+                        <option data-i18n="time.5pm">05:00 PM</option>
                     </select>
                     <select id="locationSelect" class="form-select mb-4">
-                        <option>Dubai Main Branch</option>
-                        <option>Marina Station</option>
-                        <option>Expo Zone</option>
+                        <option data-i18n="location.dubai">Dubai Main Branch</option>
+                        <option data-i18n="location.marina">Marina Station</option>
+                        <option data-i18n="location.expo">Expo Zone</option>
                     </select>
                     <div class="d-flex justify-content-center gap-3">
-                        <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Cancel</button>
-                        <button class="btn btn-primary" onclick="proceedToBooking()">Continue</button>
+                        <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal"
+                            data-i18n="buttons.cancel">Cancel</button>
+                        <button class="btn btn-primary" onclick="proceedToBooking()"
+                            data-i18n="buttons.continue">Continue</button>
                     </div>
                 </div>
             </div>
@@ -555,7 +584,12 @@
         let selectedHotelId = null;
         let selectedHotelImage = null;
 
-        function showLocationModal(hotelId) {
+        function changeLang(lang) {
+            localStorage.setItem('lang', lang);
+            location.reload();
+        }
+
+        /*function showLocationModal(hotelId) {
             selectedHotelId = hotelId;
 
             const cards = document.querySelectorAll('.hotel-card');
@@ -563,18 +597,31 @@
                 const title = card.querySelector('.card-title').innerText.trim();
                 if (title === hotelId) {
                     const img = card.querySelector('img');
-                    selectedHotelImage = img.getAttribute('src').split('/').pop();
+                    const src = img ? img.getAttribute('src') : null;
+                    selectedHotelImage = src ? src.split('/').pop() : 'bg-image-1.jpg';
                 }
             });
 
             const permissionModal = new bootstrap.Modal(document.getElementById('permissionModal'));
             permissionModal.show();
+        }*/
+
+        function showLocationModal(buttonElement) {
+            selectedHotelId = buttonElement.getAttribute('data-hotel');
+            selectedHotelImage = buttonElement.getAttribute('data-img') || 'bg-image-1.jpg';
+
+            const permissionModal = new bootstrap.Modal(document.getElementById('permissionModal'));
+            permissionModal.show();
         }
+
 
         function proceedAfterPermission() {
             bootstrap.Modal.getInstance(document.getElementById('permissionModal')).hide();
 
-            document.getElementById('modalTitle').innerText = selectedHotelId;
+            const modalTitle = document.getElementById('modalTitle');
+            modalTitle.removeAttribute('data-i18n');
+            modalTitle.innerText = selectedHotelId;
+
             const scheduleModal = new bootstrap.Modal(document.getElementById('locationModal'));
             scheduleModal.show();
         }
@@ -587,7 +634,11 @@
             const time24 = convertTo24Hour(selectedTime);
             const dateForDay = getNextDateForDay(selectedDay);
 
-            const bookingUrl = `booking.html?hotel=${encodeURIComponent(selectedHotelId)}&img=${encodeURIComponent(selectedHotelImage)}&day=${encodeURIComponent(selectedDay)}&time=${encodeURIComponent(time24)}&location=${encodeURIComponent(selectedLocation)}&date=${dateForDay}`;
+            const fallbackImage = 'bg-image-1.jpg';
+            const safeImage = selectedHotelImage || fallbackImage;
+
+            const bookingUrl = `booking.html?hotel=${encodeURIComponent(selectedHotelId)}&img=${encodeURIComponent(safeImage)}&day=${encodeURIComponent(selectedDay)}&time=${encodeURIComponent(time24)}&location=${encodeURIComponent(selectedLocation)}&date=${dateForDay}`;
+            console.log("Redirecting with image:", safeImage);
             window.location.href = bookingUrl;
         }
 
@@ -621,6 +672,7 @@
         });
     </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/lang.js"></script>
 </body>
 
 </html>
